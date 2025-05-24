@@ -1,18 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const TravelPlanner = () => {
     const [trip, setTrip] = useState('');
     const [token, setToken] = useState(null);
     const [savedPlaces, setSavedPlaces] = useState([]);
+    const [savedAttractions, setSavedAttractions] = useState([]);
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
+    const [activeTab, setActiveTab] = useState('destinations');
+    const navigate = useNavigate();
 
     useEffect(() => {
         const storedToken = localStorage.getItem("token");
         if (storedToken) {
             setToken(storedToken);
             fetchSavedDestinations(storedToken);
+            fetchSavedAttractions(storedToken);
         } else {
             window.location.href = "/auth";
         }
@@ -34,6 +39,25 @@ const TravelPlanner = () => {
             }
         } catch (err) {
             console.error('Error fetching saved destinations:', err);
+        }
+    };
+
+    const fetchSavedAttractions = async (authToken) => {
+        try {
+            const response = await fetch('http://localhost:5000/api/destinations/attractions/saved', {
+                headers: {
+                    'Authorization': `Bearer ${authToken}`
+                }
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                setSavedAttractions(data);
+            } else {
+                console.error('Failed to fetch saved attractions');
+            }
+        } catch (err) {
+            console.error('Error fetching saved attractions:', err);
         }
     };
 
@@ -89,10 +113,31 @@ const TravelPlanner = () => {
         }
     };
 
+    const handleRemoveAttraction = async (attractionId) => {
+        try {
+            const response = await fetch(`http://localhost:5000/api/destinations/attractions/remove/${attractionId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                setSavedAttractions(data);
+            } else {
+                console.error('Failed to remove attraction');
+            }
+        } catch (err) {
+            console.error('Error removing attraction:', err);
+        }
+    };
+
     const handleLogout = () => {
         localStorage.removeItem("token");
         setToken(null);
         setSavedPlaces([]);
+        setSavedAttractions([]);
         window.location.href = "/auth";
     };
 
@@ -100,6 +145,10 @@ const TravelPlanner = () => {
         if (e.key === 'Enter') {
             handleAddTrip();
         }
+    };
+
+    const handleCityClick = (cityId) => {
+        navigate(`/city/${cityId}`);
     };
 
     return (
@@ -120,24 +169,68 @@ const TravelPlanner = () => {
                                 Logout
                             </button>
                             <div className="saved-places">
-                                <strong>Saved Places:</strong>
-                                {savedPlaces.length === 0 ? (
-                                    <p className="no-places">No saved places yet</p>
+                                <div className="tabs">
+                                    <button
+                                        onClick={() => setActiveTab('destinations')}
+                                        className={`tab-button ${activeTab === 'destinations' ? 'active' : ''}`}
+                                    >
+                                        Destinations ({savedPlaces.length})
+                                    </button>
+                                    <button
+                                        onClick={() => setActiveTab('attractions')}
+                                        className={`tab-button ${activeTab === 'attractions' ? 'active' : ''}`}
+                                    >
+                                        Attractions ({savedAttractions.length})
+                                    </button>
+                                </div>
+
+                                {activeTab === 'destinations' ? (
+                                    <>
+                                        <strong>Saved Destinations:</strong>
+                                        {savedPlaces.length === 0 ? (
+                                            <p className="no-places">No saved destinations yet</p>
+                                        ) : (
+                                            <ul>
+                                                {savedPlaces.map((place) => (
+                                                    <li key={place._id} className="saved-place-item">
+                                                        <span>{place.name}</span>
+                                                        <button
+                                                            onClick={() => handleRemoveDestination(place._id)}
+                                                            className="remove-button"
+                                                            title="Remove destination"
+                                                        >
+                                                            ×
+                                                        </button>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        )}
+                                    </>
                                 ) : (
-                                    <ul>
-                                        {savedPlaces.map((place) => (
-                                            <li key={place._id} className="saved-place-item">
-                                                <span>{place.name}</span>
-                                                <button
-                                                    onClick={() => handleRemoveDestination(place._id)}
-                                                    className="remove-button"
-                                                    title="Remove destination"
-                                                >
-                                                    ×
-                                                </button>
-                                            </li>
-                                        ))}
-                                    </ul>
+                                    <>
+                                        <strong>Saved Attractions:</strong>
+                                        {savedAttractions.length === 0 ? (
+                                            <p className="no-places">No saved attractions yet</p>
+                                        ) : (
+                                            <ul>
+                                                {savedAttractions.map((attr) => (
+                                                    <li key={attr._id} className="saved-attraction-item">
+                                                        <div className="attraction-info">
+                                                            <span className="attraction-name">{attr.name}</span>
+                                                            <span className="city-name">{attr.cityName}</span>
+                                                        </div>
+                                                        <button
+                                                            onClick={() => handleRemoveAttraction(attr._id)}
+                                                            className="remove-button"
+                                                            title="Remove attraction"
+                                                        >
+                                                            ×
+                                                        </button>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        )}
+                                    </>
                                 )}
                             </div>
                         </div>
@@ -170,14 +263,20 @@ const TravelPlanner = () => {
                             { id: 'santorini', img: '/images/santorini.jpg', title: 'Santorini, Greece' },
                             { id: 'barcelona', img: '/images/barcelona.jpg', title: 'Barcelona, Spain' },
                             { id: 'dubai', img: '/images/dubai.jpg', title: 'Dubai, UAE' },
-                            { id: 'capetown', img: '/images/capetown.jpg', title: 'Cape Town, South Africa' },
+                            { id: 'london', img: '/images/london.jpg', title: 'London, United Kingdom' },
                             { id: 'sydney', img: '/images/sydney.jpg', title: 'Sydney, Australia' },
                         ].map(({ id, img, title }) => (
-                            <div className="card" key={id}>
+                            <div
+                                className="card"
+                                key={id}
+                                onClick={() => handleCityClick(id)}
+                                style={{ cursor: 'pointer' }}
+                            >
                                 <img src={img} alt={title} />
                                 <h3>{title}</h3>
                                 <button
-                                    onClick={() => {
+                                    onClick={(e) => {
+                                        e.stopPropagation();
                                         setTrip(title);
                                         document.querySelector('.add-trip-input')?.focus();
                                     }}
@@ -258,7 +357,7 @@ const TravelPlanner = () => {
                     border: 1px solid #ddd;
                     border-radius: 4px;
                     padding: 10px;
-                    min-width: 200px;
+                    min-width: 300px;
                     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
                     z-index: 1000;
                 }
@@ -278,6 +377,32 @@ const TravelPlanner = () => {
                     background-color: #c0392b;
                 }
 
+                .tabs {
+                    display: flex;
+                    gap: 5px;
+                    margin-bottom: 10px;
+                }
+
+                .tab-button {
+                    flex: 1;
+                    padding: 8px;
+                    border: 1px solid #ddd;
+                    background: #f8f9fa;
+                    cursor: pointer;
+                    border-radius: 4px;
+                    transition: all 0.3s;
+                }
+
+                .tab-button.active {
+                    background: #3498db;
+                    color: white;
+                    border-color: #3498db;
+                }
+
+                .tab-button:hover:not(.active) {
+                    background: #e9ecef;
+                }
+
                 .saved-places {
                     margin-top: 10px;
                 }
@@ -286,14 +411,30 @@ const TravelPlanner = () => {
                     list-style: none;
                     padding: 0;
                     margin: 5px 0;
+                    max-height: 300px;
+                    overflow-y: auto;
                 }
 
-                .saved-place-item {
+                .saved-place-item, .saved-attraction-item {
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    padding: 5px 0;
+                    padding: 8px 0;
                     border-bottom: 1px solid #eee;
+                }
+
+                .attraction-info {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .attraction-name {
+                    font-weight: 500;
+                }
+
+                .city-name {
+                    font-size: 12px;
+                    color: #666;
                 }
 
                 .remove-button {
