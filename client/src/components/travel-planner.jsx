@@ -1,28 +1,91 @@
 import React, { useState, useEffect } from 'react';
-import './style.css';
 
 const TravelPlanner = () => {
     const [trip, setTrip] = useState('');
     const [token, setToken] = useState(null);
     const [savedPlaces, setSavedPlaces] = useState([]);
     const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
 
     useEffect(() => {
         const storedToken = localStorage.getItem("token");
         if (storedToken) {
             setToken(storedToken);
-            setSavedPlaces(["Eiffel Tower", "Colosseum", "Mount Fuji"]); // Simulated saved places
+            fetchSavedDestinations(storedToken);
         } else {
-            // If not logged in, redirect to login/register page
             window.location.href = "/auth";
         }
     }, []);
 
-    const handleAddTrip = (e) => {
-        e.preventDefault();
+    const fetchSavedDestinations = async (authToken) => {
+        try {
+            const response = await fetch('http://localhost:5000/api/destinations/saved', {
+                headers: {
+                    'Authorization': `Bearer ${authToken}`
+                }
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                setSavedPlaces(data);
+            } else {
+                console.error('Failed to fetch saved destinations');
+            }
+        } catch (err) {
+            console.error('Error fetching saved destinations:', err);
+        }
+    };
+
+    const handleAddTrip = async () => {
+        setError('');
+
         if (trip.trim()) {
-            console.log(`Trip added: ${trip}`);
-            setTrip('');
+            setLoading(true);
+            try {
+                const response = await fetch('http://localhost:5000/api/destinations/add', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ name: trip })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    setSavedPlaces(data);
+                    setTrip('');
+                } else {
+                    setError(data.msg || 'Failed to add destination');
+                }
+            } catch (err) {
+                setError('Error adding destination');
+                console.error('Error:', err);
+            } finally {
+                setLoading(false);
+            }
+        }
+    };
+
+    const handleRemoveDestination = async (destinationId) => {
+        try {
+            const response = await fetch(`http://localhost:5000/api/destinations/remove/${destinationId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                setSavedPlaces(data);
+            } else {
+                console.error('Failed to remove destination');
+            }
+        } catch (err) {
+            console.error('Error removing destination:', err);
         }
     };
 
@@ -33,23 +96,49 @@ const TravelPlanner = () => {
         window.location.href = "/auth";
     };
 
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            handleAddTrip();
+        }
+    };
+
     return (
-        <div>
+        <div className="travel-planner">
             <header className="header">
                 <h1>Travel Planner</h1>
                 <p>Plan and organize your travel destinations easily</p>
                 <div className="user-menu">
-                    <button onClick={() => setDropdownOpen(!dropdownOpen)}>☰</button>
+                    <button
+                        onClick={() => setDropdownOpen(!dropdownOpen)}
+                        className="menu-button"
+                    >
+                        ☰
+                    </button>
                     {dropdownOpen && (
                         <div className="dropdown">
-                            <button onClick={handleLogout}>Logout</button>
+                            <button onClick={handleLogout} className="logout-button">
+                                Logout
+                            </button>
                             <div className="saved-places">
                                 <strong>Saved Places:</strong>
-                                <ul>
-                                    {savedPlaces.map((place, index) => (
-                                        <li key={index}>{place}</li>
-                                    ))}
-                                </ul>
+                                {savedPlaces.length === 0 ? (
+                                    <p className="no-places">No saved places yet</p>
+                                ) : (
+                                    <ul>
+                                        {savedPlaces.map((place) => (
+                                            <li key={place._id} className="saved-place-item">
+                                                <span>{place.name}</span>
+                                                <button
+                                                    onClick={() => handleRemoveDestination(place._id)}
+                                                    className="remove-button"
+                                                    title="Remove destination"
+                                                >
+                                                    ×
+                                                </button>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
                             </div>
                         </div>
                     )}
@@ -59,50 +148,313 @@ const TravelPlanner = () => {
             <main>
                 <section className="search">
                     <h2>Search Destination</h2>
-                    <input type="text" placeholder="Search for a city, country, or destination..." />
-                    <button>Search</button>
+                    <div className="search-container">
+                        <input
+                            type="text"
+                            placeholder="Search for a city, country, or destination..."
+                            className="search-input"
+                        />
+                        <button className="search-button">Search</button>
+                    </div>
                 </section>
 
                 <section className="destinations">
                     <h2>Top Destinations</h2>
                     <div className="destination-grid">
                         {[
-                            { href: 'paris.html', img: 'images/paris.jpg', title: 'Paris, France' },
-                            { href: 'rome.html', img: 'images/rome.jpg', title: 'Rome, Italy' },
-                            { href: 'bali.html', img: 'images/bali.jpg', title: 'Bali, Indonesia' },
-                            { href: 'newyork.html', img: 'images/newyork.jpg', title: 'New York, USA' },
-                            { href: 'tokyo.html', img: 'images/tokyo.jpg', title: 'Tokyo, Japan' },
-                            { href: 'santorini.html', img: 'images/santorini.jpg', title: 'Santorini, Greece' },
-                            { href: 'barcelona.html', img: 'images/barcelona.jpg', title: 'Barcelona, Spain' },
-                            { href: 'dubai.html', img: 'images/dubai.jpg', title: 'Dubai, UAE' },
-                            { href: 'capetown.html', img: 'images/capetown.jpg', title: 'Cape Town, South Africa' },
-                            { href: 'sydney.html', img: 'images/sydney.jpg', title: 'Sydney, Australia' },
-                        ].map(({ href, img, title }) => (
-                            <a href={href} className="card" key={title}>
+                            { id: 'paris', img: '/images/paris.jpg', title: 'Paris, France' },
+                            { id: 'rome', img: '/images/rome.jpg', title: 'Rome, Italy' },
+                            { id: 'bali', img: '/images/bali.jpg', title: 'Bali, Indonesia' },
+                            { id: 'newyork', img: '/images/newyork.jpg', title: 'New York, USA' },
+                            { id: 'tokyo', img: '/images/tokyo.jpg', title: 'Tokyo, Japan' },
+                            { id: 'santorini', img: '/images/santorini.jpg', title: 'Santorini, Greece' },
+                            { id: 'barcelona', img: '/images/barcelona.jpg', title: 'Barcelona, Spain' },
+                            { id: 'dubai', img: '/images/dubai.jpg', title: 'Dubai, UAE' },
+                            { id: 'capetown', img: '/images/capetown.jpg', title: 'Cape Town, South Africa' },
+                            { id: 'sydney', img: '/images/sydney.jpg', title: 'Sydney, Australia' },
+                        ].map(({ id, img, title }) => (
+                            <div className="card" key={id}>
                                 <img src={img} alt={title} />
                                 <h3>{title}</h3>
-                            </a>
+                                <button
+                                    onClick={() => {
+                                        setTrip(title);
+                                        document.querySelector('.add-trip-input')?.focus();
+                                    }}
+                                    className="quick-add-button"
+                                >
+                                    Quick Add
+                                </button>
+                            </div>
                         ))}
                     </div>
                 </section>
 
-                <section className="add trips">
-                    <form onSubmit={handleAddTrip}>
+                <section className="add-trips">
+                    <h2>Add Destination to Your List</h2>
+                    {error && <p className="error-message">{error}</p>}
+                    <div className="add-trip-container">
                         <input
                             type="text"
                             placeholder="Destination name"
                             value={trip}
                             onChange={(e) => setTrip(e.target.value)}
+                            onKeyPress={handleKeyPress}
+                            className="add-trip-input"
                             required
                         />
-                        <button type="submit">Add Trip</button>
-                    </form>
+                        <button
+                            onClick={handleAddTrip}
+                            disabled={loading || !trip.trim()}
+                            className="add-trip-button"
+                        >
+                            {loading ? 'Adding...' : 'Add Trip'}
+                        </button>
+                    </div>
                 </section>
             </main>
 
             <footer>
                 <p>&copy; 2025 Travel Planner. All rights reserved.</p>
             </footer>
+
+            <style jsx>{`
+                .travel-planner {
+                    font-family: Arial, sans-serif;
+                    min-height: 100vh;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .header {
+                    background-color: #2c3e50;
+                    color: white;
+                    padding: 20px;
+                    text-align: center;
+                    position: relative;
+                }
+
+                .user-menu {
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                }
+
+                .menu-button {
+                    background: none;
+                    border: none;
+                    color: white;
+                    font-size: 24px;
+                    cursor: pointer;
+                    padding: 5px 10px;
+                }
+
+                .dropdown {
+                    position: absolute;
+                    top: 100%;
+                    right: 0;
+                    background: white;
+                    color: black;
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                    padding: 10px;
+                    min-width: 200px;
+                    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                    z-index: 1000;
+                }
+
+                .logout-button {
+                    width: 100%;
+                    padding: 10px;
+                    background-color: #e74c3c;
+                    color: white;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    margin-bottom: 10px;
+                }
+
+                .logout-button:hover {
+                    background-color: #c0392b;
+                }
+
+                .saved-places {
+                    margin-top: 10px;
+                }
+
+                .saved-places ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 5px 0;
+                }
+
+                .saved-place-item {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 5px 0;
+                    border-bottom: 1px solid #eee;
+                }
+
+                .remove-button {
+                    background: none;
+                    border: none;
+                    color: #e74c3c;
+                    font-size: 20px;
+                    cursor: pointer;
+                    padding: 0 5px;
+                }
+
+                .remove-button:hover {
+                    color: #c0392b;
+                }
+
+                .no-places {
+                    color: #666;
+                    font-style: italic;
+                    margin: 10px 0;
+                }
+
+                main {
+                    flex: 1;
+                    padding: 20px;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    width: 100%;
+                }
+
+                section {
+                    margin-bottom: 40px;
+                }
+
+                h2 {
+                    color: #2c3e50;
+                    margin-bottom: 20px;
+                }
+
+                .search-container {
+                    display: flex;
+                    gap: 10px;
+                }
+
+                .search-input {
+                    flex: 1;
+                    padding: 10px;
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                    font-size: 16px;
+                }
+
+                .search-button {
+                    padding: 10px 20px;
+                    background-color: #3498db;
+                    color: white;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    font-size: 16px;
+                }
+
+                .search-button:hover {
+                    background-color: #2980b9;
+                }
+
+                .destination-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                    gap: 20px;
+                }
+
+                .card {
+                    border: 1px solid #ddd;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    transition: transform 0.3s;
+                    cursor: pointer;
+                }
+
+                .card:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                }
+
+                .card img {
+                    width: 100%;
+                    height: 200px;
+                    object-fit: cover;
+                }
+
+                .card h3 {
+                    padding: 15px;
+                    margin: 0;
+                    color: #2c3e50;
+                }
+
+                .quick-add-button {
+                    width: 100%;
+                    padding: 10px;
+                    background-color: #27ae60;
+                    color: white;
+                    border: none;
+                    cursor: pointer;
+                    font-size: 14px;
+                }
+
+                .quick-add-button:hover {
+                    background-color: #229954;
+                }
+
+                .add-trips {
+                    background-color: #f8f9fa;
+                    padding: 30px;
+                    border-radius: 8px;
+                }
+
+                .error-message {
+                    color: #e74c3c;
+                    margin-bottom: 10px;
+                }
+
+                .add-trip-container {
+                    display: flex;
+                    gap: 10px;
+                }
+
+                .add-trip-input {
+                    flex: 1;
+                    padding: 12px;
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                    font-size: 16px;
+                }
+
+                .add-trip-button {
+                    padding: 12px 24px;
+                    background-color: #27ae60;
+                    color: white;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    font-size: 16px;
+                    transition: background-color 0.3s;
+                }
+
+                .add-trip-button:hover:not(:disabled) {
+                    background-color: #229954;
+                }
+
+                .add-trip-button:disabled {
+                    background-color: #95a5a6;
+                    cursor: not-allowed;
+                }
+
+                footer {
+                    background-color: #34495e;
+                    color: white;
+                    text-align: center;
+                    padding: 20px;
+                }
+            `}</style>
         </div>
     );
 };
