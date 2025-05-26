@@ -157,11 +157,10 @@ const CityPage = () => {
 
                 {/* Attractions */}
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Top Attractions in {city.name}</h2>
-                <div className="flex flex-wrap gap-6 mb-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
                     {cityAttractions.length > 0 ? (
                         cityAttractions.map(attraction => (
                             <AttractionCard
-
                                 key={attraction.id}
                                 attraction={attraction}
                                 cityName={city.name}
@@ -170,7 +169,7 @@ const CityPage = () => {
                             />
                         ))
                     ) : (
-                        <p className="text-gray-500 w-full">No attractions found for this city.</p>
+                        <p className="text-gray-500 col-span-full">No attractions found for this city.</p>
                     )}
                 </div>
 
