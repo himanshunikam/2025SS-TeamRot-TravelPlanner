@@ -26,46 +26,60 @@ const AttractionCard = ({ attraction, cityName, savedAttractions, onAdd }) => {
         }
     };
 
+    const renderStars = (rating) => {
+        const stars = [];
+        for (let i = 1; i <= 5; i++) {
+            stars.push(
+                <span key={i} className={i <= rating ? 'text-yellow-400' : 'text-gray-300'}>
+                    ★
+                </span>
+            );
+        }
+        return stars;
+    };
+
     return (
-        <div className="flex flex-col h-full bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-            <div className="h-48 overflow-hidden relative">
-                <img
-                    width={400}
-                    height={400}
-                    src={attraction.image}
-                    alt={attraction.name}
-                    className="w-full h-full object-cover"
-                />
+        <div
+            className="card cursor-pointer"
+            style={{
+                borderRadius: '8px',
+                overflow: 'hidden',
+                backgroundColor: '#fff',
+                boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
+                transition: 'transform 0.2s',
+            }}
+        >
+            <img
+                src={attraction.image}
+                alt={attraction.name}
+                style={{ width: '100%', height: '180px', objectFit: 'contain' }}
+            />
+            <div style={{ padding: '12px' }}>
+                <h3 className="text-lg font-semibold mb-1">{attraction.name}</h3>
+
+                {/* Ratings */}
+                <div className="mb-2 text-sm">{renderStars(attraction.rating || 0)}</div>
+
+                {/* Description */}
+                <p className="text-gray-600 text-sm mb-3 line-clamp-4">
+                    {attraction.description}
+                </p>
+
+                {/* Add/Save Button */}
                 <button
-                    onClick={handleAdd}
-                    disabled={isSaved || isAdding}
-                    className={`absolute top-2 right-2 p-2 rounded-full shadow-lg transition-all duration-300 ${
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        onAdd(attraction, cityName);
+                    }}
+                    disabled={isSaved}
+                    className={`quick-add-button py-1 px-3 rounded text-sm ${
                         isSaved
-                            ? 'bg-green-500 text-white cursor-default'
-                            : isAdding
-                                ? 'bg-gray-400 text-white cursor-wait'
-                                : 'bg-white text-gray-700 hover:bg-teal-500 hover:text-white cursor-pointer'
+                            ? 'bg-gray-300 text-gray-600 cursor-not-allowed'
+                            : 'bg-teal-600 text-white hover:bg-teal-700'
                     }`}
-                    title={isSaved ? 'Already saved' : 'Add to saved attractions'}
                 >
-                    {isAdding ? (
-                        <Loader2 className="h-5 w-5 animate-spin" />
-                    ) : isSaved ? (
-                        <Check className="h-5 w-5" />
-                    ) : (
-                        <Plus className="h-5 w-5" />
-                    )}
+                    {isSaved ? 'Saved' : 'Add to Trip'}
                 </button>
-            </div>
-            <div className="p-4 flex-grow">
-                <div className="flex items-start justify-between">
-                    <h3 className="text-lg font-semibold text-gray-800">{attraction.name}</h3>
-                    <div className="flex items-center bg-amber-100 px-2 py-1 rounded text-amber-800 text-sm">
-                        <span className="font-bold">{attraction.rating}</span>
-                        <span className="ml-1">★</span>
-                    </div>
-                </div>
-                <p className="mt-2 text-gray-600 text-sm">{attraction.description}</p>
             </div>
         </div>
     );
