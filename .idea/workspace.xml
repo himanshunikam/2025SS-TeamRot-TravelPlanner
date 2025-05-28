@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" name="Changes" comment="Attraction cards are displayed properly">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/attractions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/attractions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/travel-planner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/travel-planner.jsx" afterDir="false" />
+    </list>
+    <list id="04ce6aa6-c5ce-4853-b770-e798ece46fd9" name="Changes by thomm" comment="" />
+    <list id="c8093d6c-7fd8-4574-9955-f68ff7bd39dd" name="Changes by valdo" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2xOx8FWZnVB0DSj311Z2bhDKRUa" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Node.js.CityPage.jsx.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.travel-planner.jsx.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;thomas-woche2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nikam/WebstormProjects/2025SS-TeamRot-TravelPlanner/client/public&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2025.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nikam\WebstormProjects\2025SS-TeamRot-TravelPlanner\client\public" />
+      <recent name="C:\Users\nikam\WebstormProjects\2025SS-TeamRot-TravelPlanner\client" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nikam\WebstormProjects\2025SS-TeamRot-TravelPlanner\client\src\components" />
+      <recent name="C:\Users\nikam\WebstormProjects\2025SS-TeamRot-TravelPlanner\client\src" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-WS-251.25410.117" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" name="Changes" comment="" />
+      <created>1747822762255</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1747822762255</updated>
+      <workItem from="1747822765030" duration="22000" />
+      <workItem from="1747822788269" duration="1661000" />
+      <workItem from="1747827553562" duration="4288000" />
+      <workItem from="1747860294983" duration="937000" />
+      <workItem from="1747894216966" duration="2357000" />
+      <workItem from="1747989217367" duration="1682000" />
+      <workItem from="1748070619674" duration="9399000" />
+      <workItem from="1748250505221" duration="241000" />
+      <workItem from="1748261883299" duration="836000" />
+      <workItem from="1748420143958" duration="2598000" />
+    </task>
+    <task id="LOCAL-00001" summary="Attraction cards are displayed properly">
+      <option name="closed" value="true" />
+      <created>1748421973591</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1748421973591</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added &quot;Save to List&quot; feature" />
+    <MESSAGE value="Attraction cards are displayed properly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Attraction cards are displayed properly" />
+  </component>
+</project>
