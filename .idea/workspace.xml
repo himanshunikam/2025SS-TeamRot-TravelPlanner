@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" name="Changes" comment="Added &quot;Save to List&quot; feature">
+    <list default="true" id="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" name="Changes" comment="Attraction cards are displayed properly">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/AttractionCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AttractionCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/CityPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/CityPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/attractions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/attractions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/travel-planner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/travel-planner.jsx" afterDir="false" />
     </list>
     <list id="04ce6aa6-c5ce-4853-b770-e798ece46fd9" name="Changes by thomm" comment="" />
     <list id="c8093d6c-7fd8-4574-9955-f68ff7bd39dd" name="Changes by valdo" comment="" />
@@ -94,8 +93,17 @@
       <workItem from="1748070619674" duration="9399000" />
       <workItem from="1748250505221" duration="241000" />
       <workItem from="1748261883299" duration="836000" />
-      <workItem from="1748420143958" duration="1679000" />
+      <workItem from="1748420143958" duration="2598000" />
     </task>
+    <task id="LOCAL-00001" summary="Attraction cards are displayed properly">
+      <option name="closed" value="true" />
+      <created>1748421973591</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1748421973591</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,6 +122,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added &quot;Save to List&quot; feature" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added &quot;Save to List&quot; feature" />
+    <MESSAGE value="Attraction cards are displayed properly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Attraction cards are displayed properly" />
   </component>
 </project>

@@ -239,17 +239,6 @@ const TravelPlanner = () => {
             </header>
 
             <main>
-                <section className="search">
-                    <h2>Search Destination</h2>
-                    <div className="search-container">
-                        <input
-                            type="text"
-                            placeholder="Search for a city, country, or destination..."
-                            className="search-input"
-                        />
-                        <button className="search-button">Search</button>
-                    </div>
-                </section>
 
                 <section className="destinations">
                     <h2>Top Destinations</h2>
