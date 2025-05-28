@@ -14,7 +14,7 @@ export const attractions = [
         name: 'Louvre Museum',
         description: 'The world\'s largest art museum and a historic monument housing priceless works including the Mona Lisa.',
         image: '/images/louvre.jpg',
-        rating: 4.7
+        rating: 3.5
     },
     {
         id: 'notre-dame',
@@ -32,7 +32,7 @@ export const attractions = [
         name: 'Tokyo Skytree',
         description: 'A broadcasting and observation tower, and the tallest structure in Japan.',
         image: '/images/tokyoskytree.jpg',
-        rating: 4.5
+        rating: 3.2
     },
     {
         id: 'senso-ji',
@@ -48,7 +48,7 @@ export const attractions = [
         name: 'Meiji Shrine',
         description: 'Shinto shrine dedicated to Emperor Meiji and Empress Shōken.',
         image: '/images/meijishrine.jpg',
-        rating: 4.7
+        rating: 5
     },
 
     // New York
@@ -58,7 +58,7 @@ export const attractions = [
         name: 'Statue of Liberty',
         description: 'Colossal neoclassical sculpture on Liberty Island, a symbol of freedom and the United States.',
         image: '/images/statueofliberty.jpg',
-        rating: 4.7
+        rating: 4.2
     },
     {
         id: 'times-square',
@@ -66,7 +66,7 @@ export const attractions = [
         name: 'Times Square',
         description: 'Major commercial intersection, tourist destination, and entertainment center.',
         image: '/images/timessquare.jpg',
-        rating: 4.5
+        rating: 4.9
     },
     {
         id: 'central-park',
@@ -74,7 +74,7 @@ export const attractions = [
         name: 'Central Park',
         description: 'Urban park in Manhattan, the most visited urban park in the United States.',
         image: '/images/centralpark.jpg',
-        rating: 4.8
+        rating: 3.2
     },
 
     // Rome
@@ -92,7 +92,7 @@ export const attractions = [
         name: 'Vatican City',
         description: 'Independent city-state enclaved within Rome, home to St. Peter\'s Basilica and the Vatican Museums.',
         image: '/images/vaticancity.jpg',
-        rating: 4.9
+        rating: 3.2
     },
 
     // Sydney
@@ -110,7 +110,7 @@ export const attractions = [
         name: 'Bondi Beach',
         description: 'Popular beach and the name of the surrounding suburb in Sydney.',
         image: '/images/bondibeach.jpg',
-        rating: 4.6
+        rating: 3.6
     },
 
     // Istanbul
