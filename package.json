@@ -33,8 +33,9 @@
     "yargs-parser": "^21.1.1"
   },
   "scripts": {
-    "start:all": "concurrently \"node index.js --prefix server\" \"npm start --prefix client\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:all": "concurrently \"cd server && node index.js\" \"cd client && npm start\"",
+    "server": "cd server && node index.js",
+    "client": "cd client && npm start"
   },
   "repository": {
     "type": "git",

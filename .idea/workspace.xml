@@ -6,27 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" name="Changes" comment="Added &quot;Save to List&quot; feature">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/AttractionCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AttractionCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/CityPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/CityPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/attractions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/attractions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/cities.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/cities.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/travel-planner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/travel-planner.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/destinations.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/destinations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
     </list>
-    <list id="04ce6aa6-c5ce-4853-b770-e798ece46fd9" name="Changes by thomm" comment="">
-      <change beforePath="$PROJECT_DIR$/client/src/components/attractions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/attractions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/cities.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/cities.js" afterDir="false" />
-    </list>
-    <list id="c8093d6c-7fd8-4574-9955-f68ff7bd39dd" name="Changes by valdo" comment="">
-      <change beforePath="$PROJECT_DIR$/client/src/components/CityPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/CityPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/attractions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/attractions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/cities.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/cities.js" afterDir="false" />
-    </list>
+    <list id="04ce6aa6-c5ce-4853-b770-e798ece46fd9" name="Changes by thomm" comment="" />
+    <list id="c8093d6c-7fd8-4574-9955-f68ff7bd39dd" name="Changes by valdo" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,70 +27,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/client/src/components/attractions.js">
-      <ranges>
-        <range start1="7" end1="8" start2="7" end2="8" changelist="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" />
-        <range start1="15" end1="17" start2="15" end2="17" changelist="c8093d6c-7fd8-4574-9955-f68ff7bd39dd" />
-        <range start1="23" end1="24" start2="23" end2="24" changelist="04ce6aa6-c5ce-4853-b770-e798ece46fd9" />
-        <range start1="33" end1="34" start2="33" end2="34" changelist="04ce6aa6-c5ce-4853-b770-e798ece46fd9" />
-        <range start1="41" end1="42" start2="41" end2="42" changelist="c8093d6c-7fd8-4574-9955-f68ff7bd39dd" />
-        <range start1="49" end1="50" start2="49" end2="50" changelist="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" />
-        <range start1="59" end1="60" start2="59" end2="60" changelist="04ce6aa6-c5ce-4853-b770-e798ece46fd9" />
-        <range start1="67" end1="68" start2="67" end2="68" changelist="04ce6aa6-c5ce-4853-b770-e798ece46fd9" />
-        <range start1="75" end1="76" start2="75" end2="76" changelist="c8093d6c-7fd8-4574-9955-f68ff7bd39dd" />
-        <range start1="85" end1="86" start2="85" end2="86" changelist="04ce6aa6-c5ce-4853-b770-e798ece46fd9" />
-        <range start1="93" end1="94" start2="93" end2="94" changelist="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" />
-        <range start1="103" end1="104" start2="103" end2="104" changelist="04ce6aa6-c5ce-4853-b770-e798ece46fd9" />
-        <range start1="111" end1="112" start2="111" end2="112" changelist="04ce6aa6-c5ce-4853-b770-e798ece46fd9" />
-        <range start1="121" end1="122" start2="121" end2="122" changelist="c8093d6c-7fd8-4574-9955-f68ff7bd39dd" />
-        <range start1="131" end1="132" start2="131" end2="132" changelist="04ce6aa6-c5ce-4853-b770-e798ece46fd9" />
-        <range start1="141" end1="142" start2="141" end2="142" changelist="04ce6aa6-c5ce-4853-b770-e798ece46fd9" />
-        <range start1="151" end1="152" start2="151" end2="152" changelist="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" />
-        <range start1="158" end1="159" start2="158" end2="159" changelist="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" />
-        <range start1="161" end1="162" start2="161" end2="162" changelist="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/client/src/components/cities.js">
-      <ranges>
-        <range start1="7" end1="8" start2="7" end2="8" changelist="04ce6aa6-c5ce-4853-b770-e798ece46fd9" />
-        <range start1="14" end1="15" start2="14" end2="15" changelist="c8093d6c-7fd8-4574-9955-f68ff7bd39dd" />
-        <range start1="21" end1="22" start2="21" end2="22" changelist="c8093d6c-7fd8-4574-9955-f68ff7bd39dd" />
-        <range start1="28" end1="29" start2="28" end2="29" changelist="c8093d6c-7fd8-4574-9955-f68ff7bd39dd" />
-        <range start1="35" end1="36" start2="35" end2="36" changelist="c8093d6c-7fd8-4574-9955-f68ff7bd39dd" />
-        <range start1="42" end1="43" start2="42" end2="43" changelist="c8093d6c-7fd8-4574-9955-f68ff7bd39dd" />
-        <range start1="49" end1="50" start2="49" end2="50" changelist="c8093d6c-7fd8-4574-9955-f68ff7bd39dd" />
-        <range start1="56" end1="57" start2="56" end2="57" changelist="c8093d6c-7fd8-4574-9955-f68ff7bd39dd" />
-        <range start1="63" end1="64" start2="63" end2="64" changelist="c8093d6c-7fd8-4574-9955-f68ff7bd39dd" />
-        <range start1="70" end1="71" start2="70" end2="71" changelist="c8093d6c-7fd8-4574-9955-f68ff7bd39dd" />
-        <range start1="73" end1="78" start2="73" end2="78" changelist="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/client/src/components/CityPage.jsx">
-      <ranges>
-        <range start1="3" end1="5" start2="3" end2="5" changelist="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" />
-        <range start1="8" end1="12" start2="8" end2="14" changelist="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" />
-        <range start1="14" end1="16" start2="16" end2="26" changelist="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" />
-        <range start1="19" end1="20" start2="29" end2="30" changelist="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" />
-        <range start1="23" end1="24" start2="33" end2="37" changelist="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" />
-        <range start1="26" end1="26" start2="39" end2="90" changelist="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" />
-        <range start1="51" end1="53" start2="115" end2="117" changelist="c8093d6c-7fd8-4574-9955-f68ff7bd39dd" />
-        <range start1="54" end1="58" start2="118" end2="121" changelist="c8093d6c-7fd8-4574-9955-f68ff7bd39dd" />
-        <range start1="60" end1="64" start2="123" end2="129" changelist="c8093d6c-7fd8-4574-9955-f68ff7bd39dd" />
-        <range start1="66" end1="66" start2="131" end2="132" changelist="c8093d6c-7fd8-4574-9955-f68ff7bd39dd" />
-        <range start1="67" end1="67" start2="133" end2="135" changelist="c8093d6c-7fd8-4574-9955-f68ff7bd39dd" />
-        <range start1="68" end1="69" start2="136" end2="137" changelist="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" />
-        <range start1="71" end1="72" start2="139" end2="140" changelist="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" />
-        <range start1="77" end1="78" start2="145" end2="145" changelist="c8093d6c-7fd8-4574-9955-f68ff7bd39dd" />
-        <range start1="87" end1="87" start2="154" end2="156" changelist="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" />
-        <range start1="90" end1="91" start2="159" end2="160" changelist="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" />
-        <range start1="93" end1="94" start2="162" end2="170" changelist="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" />
-        <range start1="96" end1="97" start2="172" end2="173" changelist="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" />
-        <range start1="99" end1="99" start2="175" end2="177" changelist="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" />
-        <range start1="105" end1="106" start2="183" end2="183" changelist="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" />
-      </ranges>
-    </file>
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
@@ -169,7 +91,10 @@
       <workItem from="1747860294983" duration="937000" />
       <workItem from="1747894216966" duration="2357000" />
       <workItem from="1747989217367" duration="1682000" />
-      <workItem from="1748070619674" duration="9399000" />
+      <workItem from="1748070619674" duration="9609000" />
+      <workItem from="1748260283001" duration="1629000" />
+      <workItem from="1748415977400" duration="14000" />
+      <workItem from="1748424918463" duration="11684000" />
     </task>
     <servers />
   </component>
