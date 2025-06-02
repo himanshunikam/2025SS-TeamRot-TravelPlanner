@@ -24,6 +24,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;thomas2849&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/himanshunikam/2025SS-TeamRot-TravelPlanner.git&quot;,
+    &quot;accountId&quot;: &quot;02692879-176c-4ad8-b67f-9dde7306446f&quot;
+  }
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
@@ -46,7 +58,7 @@
     &quot;Node.js.travel-planner.jsx.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;thomas-woche2&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/nikam/WebstormProjects/2025SS-TeamRot-TravelPlanner/client/public&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -88,6 +100,8 @@
       <workItem from="1747860294983" duration="937000" />
       <workItem from="1747894216966" duration="2357000" />
       <workItem from="1747989217367" duration="1682000" />
+      <workItem from="1748448864257" duration="1188000" />
+      <workItem from="1748865509390" duration="647000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
