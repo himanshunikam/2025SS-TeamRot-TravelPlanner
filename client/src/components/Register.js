@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './style.css';
-import {Link} from "react-router-dom"; // Import CSS for styling
+import { Link } from "react-router-dom";
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -16,16 +16,31 @@ const Register = () => {
     const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
 
     const onSubmit = async e => {
-        e.preventDefault();
+        e.preventDefault(); // Prevent form from refreshing the page
         try {
-            const res = await axios.post('http://localhost:5000/api/auth/register', {
+            const res = await axios.post('http://localhost:4500/api/auth/register', {
                 username,
                 password
             });
-            setMessage('Registered successfully'); // Set success message
+
+            if (res && res.data) {
+                setMessage('Registered successfully');
+                console.log('Registration response:', res.data);
+            } else {
+                setMessage('Unexpected response from server');
+            }
         } catch (err) {
-            console.error(err.response.data);
-            setMessage('Failed to register, User already exists'); // Set error message
+            console.error('Full error:', err);
+            if (err.response) {
+                console.error('Response data:', err.response.data);
+                setMessage('Failed to register, ' + (err.response.data.msg || 'User already exists'));
+            } else if (err.request) {
+                console.error('No response:', err.request);
+                setMessage('No response from server, please try again later.');
+            } else {
+                console.error('Error:', err.message);
+                setMessage('Registration failed: ' + err.message);
+            }
         }
     };
 
@@ -34,8 +49,22 @@ const Register = () => {
             <Link to={"/login"}>Login</Link>
             <h2>Register</h2>
             <form onSubmit={onSubmit}>
-                <input type="text" placeholder="Username" name="username" value={username} onChange={onChange} required />
-                <input type="password" placeholder="Password" name="password" value={password} onChange={onChange} required />
+                <input
+                    type="text"
+                    placeholder="Username"
+                    name="username"
+                    value={username}
+                    onChange={onChange}
+                    required
+                />
+                <input
+                    type="password"
+                    placeholder="Password"
+                    name="password"
+                    value={password}
+                    onChange={onChange}
+                    required
+                />
                 <button type="submit">Register</button>
             </form>
             <p className="message">{message}</p>

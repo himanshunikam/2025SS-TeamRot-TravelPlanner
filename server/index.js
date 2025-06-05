@@ -27,5 +27,10 @@ mongoose.connect(config.mongoURI, {
 app.use('/api/auth', authRoutes);
 app.use('/api/destinations', destinationRoutes);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4500;
+app.get('/ping', (req, res) => {
+    console.log('✅ Ping received');
+    res.send('pong');
+});
+
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

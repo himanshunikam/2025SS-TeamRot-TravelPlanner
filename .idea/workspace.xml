@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" name="Changes" comment="Attraction cards are displayed properly">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" name="Changes" comment="Attraction cards are displayed properly" />
     <list id="04ce6aa6-c5ce-4853-b770-e798ece46fd9" name="Changes by thomm" comment="" />
     <list id="c8093d6c-7fd8-4574-9955-f68ff7bd39dd" name="Changes by valdo" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,8 +22,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Thenighthunte&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/himanshunikam/2025SS-TeamRot-TravelPlanner.git&quot;,
+    &quot;accountId&quot;: &quot;eedda1da-6638-41dd-89c7-3878e7a3bcb0&quot;
+  }
+}</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -46,8 +56,8 @@
     &quot;Node.js.travel-planner.jsx.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;thomas-woche2&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/nikam/WebstormProjects/2025SS-TeamRot-TravelPlanner/client/public&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/valdo/Library/CloudStorage/OneDrive-OstbayerischeTechnischeHochschuleAmberg-Weiden/Desktop/Me/IKI/5 Semester/Big Data, Cloud und NoSQL/2025SS-TeamRot-TravelPlanner&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -88,6 +98,8 @@
       <workItem from="1747860294983" duration="937000" />
       <workItem from="1747894216966" duration="2357000" />
       <workItem from="1747989217367" duration="1682000" />
+      <workItem from="1749062603206" duration="263000" />
+      <workItem from="1749063466279" duration="3985000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
