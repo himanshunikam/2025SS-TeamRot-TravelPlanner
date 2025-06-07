@@ -9,7 +9,7 @@ const destinationRoutes = require('./routes/destinations');
 const app = express();
 
 const corsOptions = {
-    origin: process.env.CLIENT_URL || '0.0.0.0',
+    origin: process.env.REACT_APP_API_URL,
     credentials: true,
     optionsSuccessStatus: 200
 };

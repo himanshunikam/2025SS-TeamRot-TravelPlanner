@@ -20,7 +20,7 @@ const Login = ({ setLoggedInUser }) => {
         e.preventDefault();
         try {
             const res =
-                await axios.post('http://3.75.230.235:5000:5000/api/auth/login',
+                await axios.post(`${process.env.REACT_APP_API_URL}:5000/api/auth/login`,
                     {
                         username,
                         password
