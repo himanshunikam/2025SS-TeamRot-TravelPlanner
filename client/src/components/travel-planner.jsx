@@ -25,7 +25,7 @@ const TravelPlanner = () => {
 
     const fetchSavedDestinations = async (authToken) => {
         try {
-            const response = await fetch('http://localhost:5000/api/destinations/saved', {
+            const response = await fetch('http://3.75.230.235:5000/api/destinations/saved', {
                 headers: {
                     'Authorization': `Bearer ${authToken}`
                 }
@@ -44,7 +44,7 @@ const TravelPlanner = () => {
 
     const fetchSavedAttractions = async (authToken) => {
         try {
-            const response = await fetch('http://localhost:5000/api/destinations/attractions/saved', {
+            const response = await fetch('http://3.75.230.235:5000/api/destinations/attractions/saved', {
                 headers: {
                     'Authorization': `Bearer ${authToken}`
                 }
@@ -67,7 +67,7 @@ const TravelPlanner = () => {
         if (trip.trim()) {
             setLoading(true);
             try {
-                const response = await fetch('http://localhost:5000/api/destinations/add', {
+                const response = await fetch('http://3.75.230.235:5000/api/destinations/add', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ const TravelPlanner = () => {
 
     const handleRemoveDestination = async (destinationId) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/destinations/remove/${destinationId}`, {
+            const response = await fetch(`http://3.75.230.235:5000/api/destinations/remove/${destinationId}`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -115,7 +115,7 @@ const TravelPlanner = () => {
 
     const handleRemoveAttraction = async (attractionId) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/destinations/attractions/remove/${attractionId}`, {
+            const response = await fetch(`http://3.75.230.235:5000/api/destinations/attractions/remove/${attractionId}`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${token}`

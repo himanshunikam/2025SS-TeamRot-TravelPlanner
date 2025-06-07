@@ -9,7 +9,7 @@ const destinationRoutes = require('./routes/destinations');
 const app = express();
 
 const corsOptions = {
-    origin: process.env.CLIENT_URL || 'http://localhost:3000',
+    origin: process.env.CLIENT_URL || '0.0.0.0',
     credentials: true,
     optionsSuccessStatus: 200
 };

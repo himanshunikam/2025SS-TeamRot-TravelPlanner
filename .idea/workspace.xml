@@ -6,8 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" name="Changes" comment="Attraction cards are displayed properly">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/CityPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/CityPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/travel-planner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/travel-planner.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/auth.js" afterDir="false" />
     </list>
-    <list id="04ce6aa6-c5ce-4853-b770-e798ece46fd9" name="Changes by thomm" comment="" />
     <list id="c8093d6c-7fd8-4574-9955-f68ff7bd39dd" name="Changes by valdo" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +25,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JSX File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -46,7 +55,7 @@
     &quot;Node.js.travel-planner.jsx.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;thomas-woche2&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Woche-2&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/nikam/WebstormProjects/2025SS-TeamRot-TravelPlanner/client/public&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -64,14 +73,15 @@
       <recent name="C:\Users\nikam\WebstormProjects\2025SS-TeamRot-TravelPlanner\client" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\nikam\WebstormProjects\2025SS-TeamRot-TravelPlanner\client\src\components" />
       <recent name="C:\Users\nikam\WebstormProjects\2025SS-TeamRot-TravelPlanner\client\src" />
+      <recent name="C:\Users\nikam\WebstormProjects\2025SS-TeamRot-TravelPlanner\client\src\components\__tests__" />
+      <recent name="C:\Users\nikam\WebstormProjects\2025SS-TeamRot-TravelPlanner\client\src\components" />
     </key>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-WS-251.25410.117" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-WS-251.23774.424" />
       </set>
     </attachedChunks>
   </component>
@@ -88,6 +98,12 @@
       <workItem from="1747860294983" duration="937000" />
       <workItem from="1747894216966" duration="2357000" />
       <workItem from="1747989217367" duration="1682000" />
+      <workItem from="1748805428842" duration="3256000" />
+      <workItem from="1748879418422" duration="664000" />
+      <workItem from="1748886235167" duration="376000" />
+      <workItem from="1749062178828" duration="6453000" />
+      <workItem from="1749108482791" duration="5235000" />
+      <workItem from="1749290408955" duration="958000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />

@@ -72,4 +72,8 @@ router.post('/login', async (req, res) => {
     }
 });
 
+router.post('/health', async (req, res) => {
+
+})
+
 module.exports = router;
