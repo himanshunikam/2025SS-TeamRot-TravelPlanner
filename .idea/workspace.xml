@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" name="Changes" comment="Attraction cards are displayed properly" />
+    <list default="true" id="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" name="Changes" comment="Attraction cards are displayed properly">
+      <change afterPath="$PROJECT_DIR$/client/src/App.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/__tests__/AttractionCard.test.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/__tests__/Login.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/__tests__/Register.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/__tests__/attaractions.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/__tests__/cities.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/setupTests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
+    </list>
     <list id="04ce6aa6-c5ce-4853-b770-e798ece46fd9" name="Changes by thomm" comment="" />
     <list id="c8093d6c-7fd8-4574-9955-f68ff7bd39dd" name="Changes by valdo" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +34,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -32,6 +51,16 @@
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/himanshunikam/2025SS-TeamRot-TravelPlanner.git&quot;,
     &quot;accountId&quot;: &quot;eedda1da-6638-41dd-89c7-3878e7a3bcb0&quot;
+  },
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
+    },
+    &quot;owner&quot;: &quot;himanshunikam&quot;,
+    &quot;repository&quot;: &quot;2025SS-TeamRot-TravelPlanner&quot;
   }
 }</component>
   <component name="ProblemsViewState">
@@ -49,27 +78,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Node.js.CityPage.jsx.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.travel-planner.jsx.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/valdo/Library/CloudStorage/OneDrive-OstbayerischeTechnischeHochschuleAmberg-Weiden/Desktop/Me/IKI/5 Semester/Big Data, Cloud und NoSQL/2025SS-TeamRot-TravelPlanner&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2025.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Jest.App.test.js.executor": "Run",
+    "Jest.User.test.js.executor": "Run",
+    "Jest.Usertest.js.executor": "Run",
+    "Jest.authMiddleware.test.js.executor": "Run",
+    "Jest.config.test.js.executor": "Run",
+    "Jest.index.js.executor": "Run",
+    "Jest.index.test.js.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Node.js Test Runner.All Tests.executor": "Run",
+    "Node.js.CityPage.jsx.executor": "Run",
+    "Node.js.index.js.executor": "Run",
+    "Node.js.setupTests.js.executor": "Run",
+    "Node.js.travel-planner.jsx.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "#3 on valdo",
+    "last_opened_file_path": "/Users/valdo/Library/CloudStorage/OneDrive-OstbayerischeTechnischeHochschuleAmberg-Weiden/Desktop/Me/IKI/5 Semester/Big Data, Cloud und NoSQL/2025SS-TeamRot-TravelPlanner/server/middleware",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "/Users/valdo/Library/CloudStorage/OneDrive-OstbayerischeTechnischeHochschuleAmberg-Weiden/Desktop/Me/IKI/5 Semester/Big Data, Cloud und NoSQL/2025SS-TeamRot-TravelPlanner/node_modules/jest",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server/middleware" />
       <recent name="C:\Users\nikam\WebstormProjects\2025SS-TeamRot-TravelPlanner\client\public" />
       <recent name="C:\Users\nikam\WebstormProjects\2025SS-TeamRot-TravelPlanner\client" />
     </key>
@@ -77,6 +118,17 @@
       <recent name="C:\Users\nikam\WebstormProjects\2025SS-TeamRot-TravelPlanner\client\src\components" />
       <recent name="C:\Users\nikam\WebstormProjects\2025SS-TeamRot-TravelPlanner\client\src" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="All Tests" type="NodeJsTestRunner">
+      <node-interpreter value="project" />
+      <working-dir value="$PROJECT_DIR$" />
+      <language value="JAVA_SCRIPT" />
+      <typescript-loader value="MANUAL_SETUP_IN_NODE_OPTION" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -100,8 +152,18 @@
       <workItem from="1747989217367" duration="1682000" />
       <workItem from="1749062603206" duration="263000" />
       <workItem from="1749063466279" duration="3985000" />
+      <workItem from="1749067500325" duration="4030000" />
+      <workItem from="1749113856430" duration="10748000" />
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Attraction cards are displayed properly">
+      <option name="closed" value="true" />
+      <created>1749112919226</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1749112919226</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,5 +184,17 @@
     <MESSAGE value="Added &quot;Save to List&quot; feature" />
     <MESSAGE value="Attraction cards are displayed properly" />
     <option name="LAST_COMMIT_MESSAGE" value="Attraction cards are displayed properly" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/client/src/App.test.js</url>
+          <line>1</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

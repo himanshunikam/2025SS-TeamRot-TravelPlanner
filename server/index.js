@@ -29,7 +29,7 @@ app.use('/api/destinations', destinationRoutes);
 
 const PORT = process.env.PORT || 4500;
 app.get('/ping', (req, res) => {
-    console.log('✅ Ping received');
+    console.log(' Ping received');
     res.send('pong');
 });
 
