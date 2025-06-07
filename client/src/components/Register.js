@@ -24,7 +24,12 @@ const Register = () => {
             });
             setMessage('Registered successfully'); // Set success message
         } catch (err) {
-            console.error(err.response.data);
+            console.error("Error: ",err);
+            if(err.response){
+                console.log(err.response.data);
+            }else{
+                console.log(err.message);
+            }
             setMessage('Failed to register, User already exists'); // Set error message
         }
     };

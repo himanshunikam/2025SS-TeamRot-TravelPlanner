@@ -31,7 +31,12 @@ const Login = ({ setLoggedInUser }) => {
             // Set success message
             setMessage('Logged in successfully');
         } catch (err) {
-            console.error(err.response.data);
+            console.error(err);
+            if (err.response && err.response.data) {
+                console.log(err.response.data);
+            }else{
+                console.log(err.message);
+            }
             // Set error message
             setMessage('Failed to login - wrong credentials');
         }
