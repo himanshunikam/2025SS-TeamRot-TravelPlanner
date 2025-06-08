@@ -17,6 +17,13 @@ const Register = () => {
 
     const onSubmit = async e => {
         e.preventDefault();
+        console.log('Environment check:');
+        console.log('REACT_APP_API_URL:', process.env.REACT_APP_API_URL);
+        console.log('NODE_ENV:', process.env.NODE_ENV);
+        console.log('All env vars:', Object.keys(process.env).filter(key => key.startsWith('REACT_APP_')));
+
+        const apiUrl = `${process.env.REACT_APP_API_URL}:5000/api/auth/register`;
+        console.log('Full API URL:', apiUrl);
         try {
             const res = await axios.post(`${process.env.REACT_APP_API_URL}:5000/api/auth/register`, {
                 username,
