@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" name="Changes" comment="Attraction cards are displayed properly">
-      <change afterPath="$PROJECT_DIR$/client/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/.env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.env" beforeDir="false" afterPath="$PROJECT_DIR$/client/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/travel-planner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/travel-planner.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/setupTests.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
     </list>
     <list id="c8093d6c-7fd8-4574-9955-f68ff7bd39dd" name="Changes by valdo" comment="" />
@@ -105,7 +106,9 @@
       <workItem from="1749108482791" duration="5235000" />
       <workItem from="1749290408955" duration="6344000" />
       <workItem from="1749371412293" duration="2417000" />
-      <workItem from="1749377252049" duration="394000" />
+      <workItem from="1749377252049" duration="3911000" />
+      <workItem from="1749465237793" duration="1162000" />
+      <workItem from="1749977056091" duration="1767000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
