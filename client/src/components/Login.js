@@ -20,7 +20,7 @@ const Login = ({ setLoggedInUser }) => {
         e.preventDefault();
         try {
             const res =
-                await axios.post('http://localhost:5000/api/auth/login',
+                await axios.post(`${process.env.REACT_APP_API_URL}:5000/api/auth/login`,
                     {
                         username,
                         password
@@ -31,7 +31,12 @@ const Login = ({ setLoggedInUser }) => {
             // Set success message
             setMessage('Logged in successfully');
         } catch (err) {
-            console.error(err.response.data);
+            console.error(err);
+            if (err.response && err.response.data) {
+                console.log(err.response.data);
+            }else{
+                console.log(err.message);
+            }
             // Set error message
             setMessage('Failed to login - wrong credentials');
         }
