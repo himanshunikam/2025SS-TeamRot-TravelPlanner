@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39c1e60d-470d-4ef5-9ae4-e08ca1d611f7" name="Changes" comment="Attraction cards are displayed properly">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.env" beforeDir="false" afterPath="$PROJECT_DIR$/client/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/travel-planner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/travel-planner.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/setupTests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
+
     </list>
     <list id="c8093d6c-7fd8-4574-9955-f68ff7bd39dd" name="Changes by valdo" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,10 +21,37 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Thenighthunte&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/himanshunikam/2025SS-TeamRot-TravelPlanner.git&quot;,
+    &quot;accountId&quot;: &quot;eedda1da-6638-41dd-89c7-3878e7a3bcb0&quot;
+  },
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
+    },
+    &quot;owner&quot;: &quot;himanshunikam&quot;,
+    &quot;repository&quot;: &quot;2025SS-TeamRot-TravelPlanner&quot;
+  }
+}</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -46,38 +65,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Node.js.CityPage.jsx.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.travel-planner.jsx.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;AWS-EC2&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/nikam/WebstormProjects/2025SS-TeamRot-TravelPlanner&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2025.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\nikam\WebstormProjects\2025SS-TeamRot-TravelPlanner" />
-      <recent name="C:\Users\nikam\WebstormProjects\2025SS-TeamRot-TravelPlanner\server" />
+
       <recent name="C:\Users\nikam\WebstormProjects\2025SS-TeamRot-TravelPlanner\client\public" />
       <recent name="C:\Users\nikam\WebstormProjects\2025SS-TeamRot-TravelPlanner\client" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\nikam\WebstormProjects\2025SS-TeamRot-TravelPlanner\client" />
-      <recent name="C:\Users\nikam\WebstormProjects\2025SS-TeamRot-TravelPlanner\client\src" />
-      <recent name="C:\Users\nikam\WebstormProjects\2025SS-TeamRot-TravelPlanner\client\src\components\__tests__" />
+
       <recent name="C:\Users\nikam\WebstormProjects\2025SS-TeamRot-TravelPlanner\client\src\components" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="basic test works" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/client/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$/client" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/client/src/App.test.js" />
+      <test-names>
+        <test-name value="basic test works" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="All Tests" type="NodeJsTestRunner">
+      <node-interpreter value="project" />
+      <working-dir value="$PROJECT_DIR$" />
+      <language value="JAVA_SCRIPT" />
+      <typescript-loader value="MANUAL_SETUP_IN_NODE_OPTION" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.basic test works" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -99,18 +127,25 @@
       <workItem from="1747860294983" duration="937000" />
       <workItem from="1747894216966" duration="2357000" />
       <workItem from="1747989217367" duration="1682000" />
-      <workItem from="1748805428842" duration="3256000" />
-      <workItem from="1748879418422" duration="664000" />
-      <workItem from="1748886235167" duration="376000" />
-      <workItem from="1749062178828" duration="6453000" />
-      <workItem from="1749108482791" duration="5235000" />
-      <workItem from="1749290408955" duration="6344000" />
-      <workItem from="1749371412293" duration="2417000" />
-      <workItem from="1749377252049" duration="3911000" />
-      <workItem from="1749465237793" duration="1162000" />
-      <workItem from="1749977056091" duration="1767000" />
+
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00003" summary="server test">
+      <option name="closed" value="true" />
+      <created>1749310646935</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1749310646935</updated>
+    </task>
+    <task id="LOCAL-00004" summary="server test">
+      <option name="closed" value="true" />
+      <created>1749310983837</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1749310983837</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,6 +165,24 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added &quot;Save to List&quot; feature" />
     <MESSAGE value="Attraction cards are displayed properly" />
-    <option name="LAST_COMMIT_MESSAGE" value="Attraction cards are displayed properly" />
+    <MESSAGE value="server test" />
+    <option name="LAST_COMMIT_MESSAGE" value="server test" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/client/src/App.test.js</url>
+          <line>1</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/client/src/components/__tests__/AttractionCard.test.jsx</url>
+          <line>1</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
