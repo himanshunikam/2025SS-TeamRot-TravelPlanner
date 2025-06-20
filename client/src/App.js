@@ -1,6 +1,6 @@
 // client/src/App.js
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router';
 import Register from './components/Register';
 import Login from './components/Login';
 import TravelPlanner from "./components/travel-planner";
@@ -29,30 +29,28 @@ const App = () => {
     }
 
     return (
-        <Router>
-            <div className="App">
-                <Routes>
-                    {/* Public routes */}
-                    <Route path="/login" element={
-                        loggedInUser ? <Navigate to="/travel" /> : <Login setLoggedInUser={setLoggedInUser} />
-                    } />
-                    <Route path="/register" element={
-                        loggedInUser ? <Navigate to="/travel" /> : <Register />
-                    } />
+        <div className="App">
+            <Routes>
+                {/* Public routes */}
+                <Route path="/login" element={
+                    loggedInUser ? <Navigate to="/travel" /> : <Login setLoggedInUser={setLoggedInUser} />
+                } />
+                <Route path="/register" element={
+                    loggedInUser ? <Navigate to="/travel" /> : <Register />
+                } />
 
-                    {/* Protected routes */}
-                    <Route path="/travel" element={
-                        loggedInUser ? <TravelPlanner /> : <Navigate to="/login" />
-                    } />
-                    <Route path="/city/:cityId" element={
-                        loggedInUser ? <CityPage /> : <Navigate to="/login" />
-                    } />
+                {/* Protected routes */}
+                <Route path="/travel" element={
+                    loggedInUser ? <TravelPlanner /> : <Navigate to="/login" />
+                } />
+                <Route path="/city/:cityId" element={
+                    loggedInUser ? <CityPage /> : <Navigate to="/login" />
+                } />
 
-                    {/* Default route */}
-                    <Route path="*" element={<Navigate to={loggedInUser ? "/travel" : "/login"} />} />
-                </Routes>
-            </div>
-        </Router>
+                {/* Default route */}
+                <Route path="*" element={<Navigate to={loggedInUser ? "/travel" : "/login"} />} />
+            </Routes>
+        </div>
     );
 };
 

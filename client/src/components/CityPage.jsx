@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router';
 import { ArrowLeft, MapPin, Calendar } from 'lucide-react';
 import { cities } from './cities';
 import { attractions } from './attractions';
 import AttractionCard from '../components/AttractionCard';
+import {color} from "ansi-styles";
 
 const CityPage = () => {
     const { cityId } = useParams();
@@ -137,14 +138,15 @@ const CityPage = () => {
 {/* City Description */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <div className="bg-white rounded-lg shadow-md p-6 mb-12">
-                    <h2 className="text-3xl font-bold text-white text-center mb-4">About {city.name}</h2>
-                    <p className="text-gray-700">{city.description}</p>
+                    <h2 className="text-3xl font-bold text-white text-center mb-4" style={{color: "white"}}>About {city.name}</h2>
+
+                    <p className="text-gray-700" style={{color:"white"}}>{city.description}</p>
 
                     <div className="mt-6 pt-6 border-t border-gray-200">
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2">Best time to visit</h3>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2" style={{color:"white"}}>Best time to visit</h3>
                         <div className="flex items-start space-x-2">
                             <div>
-                                <p className="text-gray-700">
+                                <p className="text-gray-700" style={{color:"white"}}>
                                     The best time to visit {city.name} varies depending on your preferences.
                                     Check local weather patterns and events before planning your trip.
                                 </p>
@@ -156,8 +158,8 @@ const CityPage = () => {
 
 
                 {/* Attractions */}
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Top Attractions in {city.name}</h2>
-                <div className="destination-grid">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6" style={{color:"white"}}>Top Attractions in {city.name}</h2>
+                <div className="destination-grid" style={{color:"white"}}>
                     {cityAttractions.length > 0 ? (
                         cityAttractions.map(attraction => (
                             <AttractionCard

@@ -1,8 +1,8 @@
 // client/src/components/Register.js
 import React, { useState } from 'react';
 import axios from 'axios';
-import './style.css';
-import {Link} from "react-router-dom"; // Import CSS for styling
+import './LoginStyle.css';
+import {Link} from "react-router"; // Import CSS for styling
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -43,12 +43,18 @@ const Register = () => {
 
     return (
         <div className="auth-form">
-            <Link to={"/login"}>Login</Link>
-            <h2>Register</h2>
+            <div className="background">
+                <div className="shape"></div>
+                <div className="shape"></div>
+            </div>
+
             <form onSubmit={onSubmit}>
+                <h1>Register</h1>
+
                 <input type="text" placeholder="Username" name="username" value={username} onChange={onChange} required />
                 <input type="password" placeholder="Password" name="password" value={password} onChange={onChange} required />
                 <button type="submit">Register</button>
+                <button><Link to={"/login"} className="Register">Login</Link></button>
             </form>
             <p className="message">{message}</p>
         </div>

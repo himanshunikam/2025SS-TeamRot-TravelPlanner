@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import './style.css'
 
 const TravelPlanner = () => {
@@ -240,6 +240,28 @@ const TravelPlanner = () => {
             </header>
 
             <main>
+                <section className="add-trips">
+                    <h2>Add Destination to Your List</h2>
+                    {error && <p className="error-message">{error}</p>}
+                    <div className="add-trip-container">
+                        <input
+                            type="text"
+                            placeholder="Destination name"
+                            value={trip}
+                            onChange={(e) => setTrip(e.target.value)}
+                            onKeyPress={handleKeyPress}
+                            className="add-trip-input"
+                            required
+                        />
+                        <button
+                            onClick={handleAddTrip}
+                            disabled={loading || !trip.trim()}
+                            className="add-trip-button"
+                        >
+                            {loading ? 'Adding...' : 'Add Trip'}
+                        </button>
+                    </div>
+                </section>
 
                 <section className="destinations">
                     <h2>Top Destinations</h2>
@@ -279,32 +301,11 @@ const TravelPlanner = () => {
                     </div>
                 </section>
 
-                <section className="add-trips">
-                    <h2>Add Destination to Your List</h2>
-                    {error && <p className="error-message">{error}</p>}
-                    <div className="add-trip-container">
-                        <input
-                            type="text"
-                            placeholder="Destination name"
-                            value={trip}
-                            onChange={(e) => setTrip(e.target.value)}
-                            onKeyPress={handleKeyPress}
-                            className="add-trip-input"
-                            required
-                        />
-                        <button
-                            onClick={handleAddTrip}
-                            disabled={loading || !trip.trim()}
-                            className="add-trip-button"
-                        >
-                            {loading ? 'Adding...' : 'Add Trip'}
-                        </button>
-                    </div>
-                </section>
+
             </main>
 
             <footer>
-                <p>&copy; 2025 Travel Planner. All rights reserved.</p>
+                <p>&copy; 2025 BCN: Team Rot</p>
             </footer>
         </div>
     );
