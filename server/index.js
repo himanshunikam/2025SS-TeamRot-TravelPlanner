@@ -1,4 +1,3 @@
-// server/index.js
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -22,15 +21,15 @@ mongoose.connect(config.mongoURI, {
     useUnifiedTopology: true
 })
     .then(() => console.log('MongoDB Connected'))
-    .catch(err => console.error(err));
+    .catch(err => console.error('MongoDB connection error:', err));
 
 app.use('/api/auth', authRoutes);
 app.use('/api/destinations', destinationRoutes);
 
-const PORT = process.env.PORT || 4500;
 app.get('/ping', (req, res) => {
-    console.log(' Ping received');
+    console.log('Ping received');
     res.send('pong');
 });
 
+const PORT = process.env.PORT || 4500;
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
