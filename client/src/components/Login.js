@@ -1,9 +1,8 @@
 // client/src/components/Login.js
 import React, { useState } from 'react';
-import axios from 'axios';
-import './style.css'; // Import CSS for styling
-import {Link} from 'react-router-dom';
-
+import axios from 'axios';// Import CSS for styling
+import {Link} from 'react-router';
+import './LoginStyle.css'
 const Login = ({ setLoggedInUser }) => {
     const [formData, setFormData] = useState({
         username: '',
@@ -19,47 +18,60 @@ const Login = ({ setLoggedInUser }) => {
     const onSubmit = async e => {
         e.preventDefault();
         try {
+
             const res =
                 await axios.post(`${process.env.REACT_APP_API_URL}:5000/api/auth/login`,
                     {
                         username,
                         password
                     });
+
             localStorage.setItem('token', res.data.token);
             setLoggedInUser(username);
-
-            // Set success message
             setMessage('Logged in successfully');
         } catch (err) {
-            console.error(err);
+
+            console.error('Full error:', err);
+
             if (err.response && err.response.data) {
-                console.log(err.response.data);
-            }else{
-                console.log(err.message);
+                console.error('Response data:', err.response.data);
+                setMessage('Failed to login - ' + (err.response.data.msg || 'wrong credentials'));
+            } else if (err.request) {
+                console.error('No response received:', err.request);
+                setMessage('No response from server, please try again later.');
+            } else {
+                console.error('Error:', err.message);
+                setMessage('Login failed: ' + err.message);
             }
-            // Set error message
-            setMessage('Failed to login - wrong credentials');
+
         }
     };
 
+
     return (
         <div className="auth-form">
-            <h2>Login</h2>
-            <Link to={"/register"}>Register</Link>
+            <div className="background">
+                <div className="shape"></div>
+                <div className="shape"></div>
+            </div>
+
             <form onSubmit={onSubmit}>
+                <h1>Login</h1>
+
                 <input type="text"
                        placeholder="Username"
                        name="username"
                        value={username}
                        onChange={onChange}
-                       required />
+                       required/>
                 <input type="password"
                        placeholder="Password"
                        name="password"
                        value={password}
                        onChange={onChange}
-                       required />
+                       required/>
                 <button type="submit">Login</button>
+                <button><Link to="/register" className="Register">Register</Link></button>
             </form>
             <p className="message">{message}</p>
         </div>

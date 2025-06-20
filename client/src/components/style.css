@@ -1,7 +1,7 @@
 /* Consolidated styles for Travel Planner App */
 
 /* Global Styles */
-body {
+travel-planner body {
     background-color: #f4f9ff;
     color: #333;
     line-height: 1.6;
@@ -207,7 +207,7 @@ h2 {
     font-size: 16px;
 }
 
-.search-button {
+travel-planner .search-button {
     padding: 10px 20px;
     background-color: #3498db;
     color: white;
@@ -217,7 +217,7 @@ h2 {
     font-size: 16px;
 }
 
-.search-button:hover {
+travel-planner .search-button:hover {
     background-color: #2980b9;
 }
 
@@ -325,6 +325,8 @@ h2 {
 
 .add-trip-button {
     padding: 12px 24px;
+    width: 30%;
+    height: 50px;
     background-color: #27ae60;
     color: white;
     border: none;
@@ -344,44 +346,7 @@ h2 {
 }
 
 /* Auth Form Styles */
-.auth-form {
-    width: 300px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
 
-.auth-form h2 {
-    margin-top: 0;
-}
-
-.auth-form input {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 8px;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-}
-
-.auth-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-.auth-form button:hover {
-    background-color: #0056b3;
-}
-
-.message {
-    margin-top: 10px;
-    color: green;
-}
 
 /* Input Styles */
 input[type="text"], input[type="date"] {
@@ -393,7 +358,7 @@ input[type="text"], input[type="date"] {
 }
 
 /* Button Styles */
-button {
+travel-planner button {
     background-color: #00b4d8;
     color: white;
     padding: 10px 15px;
@@ -404,7 +369,7 @@ button {
     margin-left: 10px;
 }
 
-button:hover {
+travel-planner button:hover {
     background-color: #00a1c2;
 }
 
