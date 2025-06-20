@@ -1,9 +1,8 @@
 // client/src/components/Login.js
 import React, { useState } from 'react';
-import axios from 'axios';
-import './style.css'; // Import CSS for styling
-import {Link} from 'react-router-dom';
-
+import axios from 'axios';// Import CSS for styling
+import {Link} from 'react-router';
+import './LoginStyle.css'
 const Login = ({ setLoggedInUser }) => {
     const [formData, setFormData] = useState({
         username: '',
@@ -51,22 +50,28 @@ const Login = ({ setLoggedInUser }) => {
 
     return (
         <div className="auth-form">
-            <h2>Login</h2>
-            <Link to={"/register"}>Register</Link>
+            <div className="background">
+                <div className="shape"></div>
+                <div className="shape"></div>
+            </div>
+
             <form onSubmit={onSubmit}>
+                <h1>Login</h1>
+
                 <input type="text"
                        placeholder="Username"
                        name="username"
                        value={username}
                        onChange={onChange}
-                       required />
+                       required/>
                 <input type="password"
                        placeholder="Password"
                        name="password"
                        value={password}
                        onChange={onChange}
-                       required />
+                       required/>
                 <button type="submit">Login</button>
+                <button><Link to="/register" className="Register">Register</Link></button>
             </form>
             <p className="message">{message}</p>
         </div>

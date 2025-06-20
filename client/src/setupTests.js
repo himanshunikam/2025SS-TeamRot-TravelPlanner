@@ -5,6 +5,13 @@ import '@testing-library/jest-dom';
 // Mock window.location
 delete window.location;
 window.location = { href: jest.fn() };
+// jest.setup.js
+
+const { TextEncoder, TextDecoder } = require('util');
+
+global.TextEncoder = TextEncoder;
+
+global.TextDecoder = TextDecoder;
 
 // Suppress console errors during tests (optional)
 const originalError = console.error;
