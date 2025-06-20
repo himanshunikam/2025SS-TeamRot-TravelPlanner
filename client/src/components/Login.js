@@ -19,15 +19,19 @@ const Login = ({ setLoggedInUser }) => {
     const onSubmit = async e => {
         e.preventDefault();
         try {
-            const res = await axios.post('http://localhost:4500/api/auth/login', {
-                username,
-                password
-            });
+
+            const res =
+                await axios.post(`${process.env.REACT_APP_API_URL}:5000/api/auth/login`,
+                    {
+                        username,
+                        password
+                    });
 
             localStorage.setItem('token', res.data.token);
             setLoggedInUser(username);
             setMessage('Logged in successfully');
         } catch (err) {
+
             console.error('Full error:', err);
 
             if (err.response && err.response.data) {
@@ -40,6 +44,7 @@ const Login = ({ setLoggedInUser }) => {
                 console.error('Error:', err.message);
                 setMessage('Login failed: ' + err.message);
             }
+
         }
     };
 

@@ -1,9 +1,15 @@
 {
   "devDependencies": {
+
+    "@babel/preset-env": "^7.27.2",
+    "@babel/preset-react": "^7.27.1",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "babel-jest": "^30.0.0-beta.3",
     "concurrently": "^9.1.2",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
-    "mongodb-memory-server": "^10.1.4",
-    "mongoose": "^8.15.1",
+
     "supertest": "^7.1.1"
   },
   "name": "2025ss-teamrot-travelplanner",
@@ -37,6 +43,8 @@
     "yargs-parser": "^21.1.1"
   },
   "scripts": {
+    "test:client": "cd client && jest",
+    "test:client-watch": "cd client && jest --watch",
     "start:all": "concurrently \"cd server && node index.js\" \"cd client && npm start\"",
     "server": "cd server && node index.js",
     "client": "cd client && npm start"

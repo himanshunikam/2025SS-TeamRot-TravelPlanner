@@ -16,9 +16,18 @@ const Register = () => {
     const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
 
     const onSubmit = async e => {
-        e.preventDefault(); // Prevent form from refreshing the page
+
+        e.preventDefault();
+        console.log('Environment check:');
+        console.log('REACT_APP_API_URL:', process.env.REACT_APP_API_URL);
+        console.log('NODE_ENV:', process.env.NODE_ENV);
+        console.log('All env vars:', Object.keys(process.env).filter(key => key.startsWith('REACT_APP_')));
+
+        const apiUrl = `${process.env.REACT_APP_API_URL}:5000/api/auth/register`;
+        console.log('Full API URL:', apiUrl);
         try {
-            const res = await axios.post('http://localhost:4500/api/auth/register', {
+            const res = await axios.post(`${process.env.REACT_APP_API_URL}:5000/api/auth/register`, {
+
                 username,
                 password
             });
@@ -30,6 +39,7 @@ const Register = () => {
                 setMessage('Unexpected response from server');
             }
         } catch (err) {
+
             console.error('Full error:', err);
             if (err.response) {
                 console.error('Response data:', err.response.data);
@@ -41,6 +51,7 @@ const Register = () => {
                 console.error('Error:', err.message);
                 setMessage('Registration failed: ' + err.message);
             }
+
         }
     };
 

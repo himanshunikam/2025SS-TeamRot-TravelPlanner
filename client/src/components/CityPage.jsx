@@ -39,7 +39,7 @@ const CityPage = () => {
 
     const fetchSavedAttractions = async (authToken) => {
         try {
-            const response = await fetch('http://localhost:5000/api/destinations/attractions/saved', {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}:5000/api/destinations/attractions/saved`, {
                 headers: {
                     'Authorization': `Bearer ${authToken}`
                 }
@@ -58,7 +58,7 @@ const CityPage = () => {
 
     const handleAddAttraction = async (attraction, cityName) => {
         try {
-            const response = await fetch('http://localhost:5000/api/destinations/attractions/add', {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}:5000/api/destinations/attractions/add`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
