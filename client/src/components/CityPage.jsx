@@ -138,15 +138,15 @@ const CityPage = () => {
 {/* City Description */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <div className="bg-white rounded-lg shadow-md p-6 mb-12">
-                    <h2 className="text-3xl font-bold text-white text-center mb-4" style={{color: "white"}}>About {city.name}</h2>
+                    <h2 className="text-3xl font-bold text-white text-center mb-4" style={{color: "white", textAlign: 'center'}}>About {city.name}</h2>
 
-                    <p className="text-gray-700" style={{color:"white"}}>{city.description}</p>
+                    <p className="text-gray-700" style={{color:"white", textAlign: 'center'}}>{city.description}</p>
 
                     <div className="mt-6 pt-6 border-t border-gray-200">
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2" style={{color:"white"}}>Best time to visit</h3>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2" style={{color:"white", textAlign: 'center'}}>Best time to visit</h3>
                         <div className="flex items-start space-x-2">
                             <div>
-                                <p className="text-gray-700" style={{color:"white"}}>
+                                <p className="text-gray-700" style={{color:"white", textAlign: 'center'}}>
                                     The best time to visit {city.name} varies depending on your preferences.
                                     Check local weather patterns and events before planning your trip.
                                 </p>
