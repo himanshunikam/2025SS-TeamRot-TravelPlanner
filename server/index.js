@@ -28,5 +28,5 @@ app.get('/ping', (req, res) => {
     res.send('pong');
 });
 
-const PORT = process.env.PORT || 4500;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
