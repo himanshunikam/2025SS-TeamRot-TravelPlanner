@@ -275,6 +275,7 @@ const TravelPlanner = () => {
                             { id: 'santorini', img: '/images/santorini.jpg', title: 'Santorini, Greece' },
                             { id: 'barcelona', img: '/images/barcelona.jpg', title: 'Barcelona, Spain' },
                             { id: 'dubai', img: '/images/dubai.jpg', title: 'Dubai, UAE' },
+                            { id: 'istanbul', img: '/images/istanbul.jpg', title: 'Istanbul, Turkey' },
                             { id: 'london', img: '/images/london.jpg', title: 'London, United Kingdom' },
                             { id: 'sydney', img: '/images/sydney.jpg', title: 'Sydney, Australia' },
                         ].map(({ id, img, title }) => (
