@@ -376,7 +376,47 @@ export const attractions = [
         image: '/images/singaporezoo.jpg',
         rating: 4.6
     },
-
+    // Santorini
+    {
+        id: 'oia-village',
+        cityId: 'santorini',
+        name: 'Oia Village',
+        description: 'Charming village known for its whitewashed houses, blue-domed churches, and stunning sunset views.',
+        image: '/images/oia.jpg',
+        rating: 4.8
+    },
+    {
+        id: 'fira-town',
+        cityId: 'santorini',
+        name: 'Fira Town',
+        description: 'Santorini’s capital, offering shops, restaurants, and cliffside views of the caldera.',
+        image: '/images/fira.jpg',
+        rating: 4.4
+    },
+    {
+        id: 'red-beach',
+        cityId: 'santorini',
+        name: 'Red Beach',
+        description: 'Famous for its red volcanic sand and dramatic landscape near Akrotiri.',
+        image: '/images/redbeach.jpg',
+        rating: 4.2
+    },
+    {
+        id: 'akrotiri-ruins',
+        cityId: 'santorini',
+        name: 'Akrotiri Ruins',
+        description: 'Ancient Minoan Bronze Age settlement preserved in volcanic ash, often called the “Pompeii of the Aegean.”',
+        image: '/images/akrotiri.jpg',
+        rating: 4.3
+    },
+    {
+        id: 'santo-winery',
+        cityId: 'santorini',
+        name: 'Santo Winery',
+        description: 'Popular winery offering tastings and panoramic views of the caldera.',
+        image: '/images/santowinery.jpg',
+        rating: 4.6
+    },
     // London
     {
         id: 'big-ben',
