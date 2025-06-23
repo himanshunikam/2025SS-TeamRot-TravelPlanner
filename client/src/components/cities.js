@@ -77,4 +77,12 @@ export const cities = [
         description: 'Set along the River Thames, London is renowned for its iconic landmarks, vibrant arts scene, and rich blend of history and modernity.',
         image: '/images/london.jpg'
     },
+    {
+        id: 'singapore',
+        name: 'Singapore',
+        country: 'Singapore',
+        description: 'A dynamic city-state, Singapore blends futuristic architecture, lush green spaces, and a vibrant mix of cultures at the crossroads of Asia.',
+        image: '/images/singapore.jpg'
+
+    }
 ];
