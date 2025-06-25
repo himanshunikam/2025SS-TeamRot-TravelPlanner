@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Plus, Check, Loader2 } from 'lucide-react';
+// Diese Teil erstellt Attractions card und zeigt einen Bild, Name der Attraction, Bewertung, eine kleine Beschreiebung
+// und einen Button, um die Attraction zu einer gespeicherten Liste Trip einzufügen
 
+// hier werden die Komponenten für die Attractions card erstellung definiert
 const AttractionCard = ({ attraction, cityName, savedAttractions, onAdd }) => {
-    const [isAdding, setIsAdding] = useState(false);
+    const [isAdding, setIsAdding] = useState(false);// die konstanten zum Hinzufügen und ihre State verwaltung
     const [isSaved, setIsSaved] = useState(false);
-
+    // Prüft, ob die Attraction gespeichert ist
     useEffect(() => {
         const saved = savedAttractions?.some(
             saved => saved.attractionId === attraction.id
@@ -25,7 +27,7 @@ const AttractionCard = ({ attraction, cityName, savedAttractions, onAdd }) => {
             setIsAdding(false);
         }
     };
-
+    // Visualisiert die Sterne Bewertung
     const renderStars = (rating) => {
         const stars = [];
         for (let i = 1; i <= 5; i++) {
@@ -37,7 +39,7 @@ const AttractionCard = ({ attraction, cityName, savedAttractions, onAdd }) => {
         }
         return stars;
     };
-
+    // hier wird die Attraktionskarte zurückgegeben
     return (
         <div
             className="card cursor-pointer"

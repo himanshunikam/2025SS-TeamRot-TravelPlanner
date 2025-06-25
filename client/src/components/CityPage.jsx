@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router';
-import { ArrowLeft, MapPin, Calendar } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { cities } from './cities';
 import { attractions } from './attractions';
 import AttractionCard from '../components/AttractionCard';
-import {color} from "ansi-styles";
 
+// hier werden die Komponenten für die Attractions card Erstellung definiert
 const CityPage = () => {
     const { cityId } = useParams();
     const [city, setCity] = useState(null);
