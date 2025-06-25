@@ -289,6 +289,7 @@ const TravelPlanner = () => {
                             { id: 'istanbul', img: '/images/istanbul.jpg', title: 'Istanbul, Turkey' },
                             { id: 'london', img: '/images/london.jpg', title: 'London, United Kingdom' },
                             { id: 'sydney', img: '/images/sydney.jpg', title: 'Sydney, Australia' },
+                            { id: 'singapore', img: '/images/singapore.jpg', title: 'Singapore, Singapore' },
                         ].map(({ id, img, title }) => (
                             <div
                                 className="card"

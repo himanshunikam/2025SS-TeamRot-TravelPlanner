@@ -1,3 +1,6 @@
+// Hier is die liste die von Attractions je nach Stadt die spater in Attractionskarte geloaded wird.
+//Jeder Attraction hat seiner id, Cityid (die Stadt name wo es sich befindet,Name(der Name der Attractin)
+// Description(Paar ERläuterung über die Attraction), Image und Rating))
 export const attractions = [
     // Paris
     {
@@ -333,6 +336,47 @@ export const attractions = [
         description: 'Luxury hotel often described as the world\'s only "seven-star" hotel.',
         image: '/images/burjalarab.jpg',
         rating: 4.7
+    },
+    // Bali
+    {
+        id: 'tanah-lot-temple',
+        cityId: 'bali',
+        name: 'Tanah Lot Temple',
+        description: 'Iconic sea temple perched on a rock formation, famous for sunset views.',
+        image: '/images/tanahlot.jpg',
+        rating: 4.7
+    },
+    {
+        id: 'ubud-monkey-forest',
+        cityId: 'bali',
+        name: 'Ubud Monkey Forest',
+        description: 'Sacred forest sanctuary home to hundreds of long-tailed macaques.',
+        image: '/images/monkeyforest.jpg',
+        rating: 4.5
+    },
+    {
+        id: 'tegalalang-rice-terrace',
+        cityId: 'bali',
+        name: 'Tegalalang Rice Terrace',
+        description: 'Famous for stunning terraced landscapes and traditional Balinese irrigation.',
+        image: '/images/tegalalang.jpg',
+        rating: 4.6
+    },
+    {
+        id: 'uluwatu-temple',
+        cityId: 'bali',
+        name: 'Uluwatu Temple',
+        description: 'Clifftop Hindu temple offering ocean views and traditional Kecak dance performances.',
+        image: '/images/uluwatu.jpg',
+        rating: 4.7
+    },
+    {
+        id: 'nusa-penida',
+        cityId: 'bali',
+        name: 'Nusa Penida',
+        description: 'Island paradise with dramatic coastal cliffs, beaches, and dive sites.',
+        image: '/images/nusapenida.jpg',
+        rating: 4.8
     },
 
     // Singapore
