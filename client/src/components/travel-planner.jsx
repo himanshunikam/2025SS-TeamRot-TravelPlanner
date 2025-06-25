@@ -1,37 +1,46 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
-import './style.css'
+import './style.css';
 
+// Main component for planning trips, managing saved destinations and attractions
 const TravelPlanner = () => {
+    // State for new trip input
     const [trip, setTrip] = useState('');
+    // JWT token for authenticated API calls
     const [token, setToken] = useState(null);
+    // Lists of saved destinations and attractions
     const [savedPlaces, setSavedPlaces] = useState([]);
     const [savedAttractions, setSavedAttractions] = useState([]);
+    // Controls visibility of user dropdown menu
     const [dropdownOpen, setDropdownOpen] = useState(false);
+    // Loading and error states for add-destination action
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
+    // Which tab is active in saved-items dropdown: 'destinations' or 'attractions'
     const [activeTab, setActiveTab] = useState('destinations');
+    // Navigation hook for routing to city pages
     const navigate = useNavigate();
 
+    // On mount, check localStorage for token and fetch saved items
     useEffect(() => {
-        const storedToken = localStorage.getItem("token");
+        const storedToken = localStorage.getItem('token');
         if (storedToken) {
             setToken(storedToken);
             fetchSavedDestinations(storedToken);
             fetchSavedAttractions(storedToken);
         } else {
-            window.location.href = "/auth";
+            // Redirect to auth if no token found
+            window.location.href = '/auth';
         }
     }, []);
 
+    // Fetch saved destinations from backend
     const fetchSavedDestinations = async (authToken) => {
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}:5000/api/destinations/saved`, {
-                headers: {
-                    'Authorization': `Bearer ${authToken}`
-                }
-            });
-
+            const response = await fetch(
+                `${process.env.REACT_APP_API_URL}:5000/api/destinations/saved`,
+                { headers: { Authorization: `Bearer ${authToken}` } }
+            );
             if (response.ok) {
                 const data = await response.json();
                 setSavedPlaces(data);
@@ -43,14 +52,13 @@ const TravelPlanner = () => {
         }
     };
 
+    // Fetch saved attractions from backend
     const fetchSavedAttractions = async (authToken) => {
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}:5000/api/destinations/attractions/saved`, {
-                headers: {
-                    'Authorization': `Bearer ${authToken}`
-                }
-            });
-
+            const response = await fetch(
+                `${process.env.REACT_APP_API_URL}:5000/api/destinations/attractions/saved`,
+                { headers: { Authorization: `Bearer ${authToken}` } }
+            );
             if (response.ok) {
                 const data = await response.json();
                 setSavedAttractions(data);
@@ -62,27 +70,30 @@ const TravelPlanner = () => {
         }
     };
 
+    // Add a new trip (destination) via API
     const handleAddTrip = async () => {
         setError('');
-
         if (trip.trim()) {
             setLoading(true);
             try {
-                const response = await fetch(`${process.env.REACT_APP_API_URL}:5000/api/destinations/add`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`
-                    },
-                    body: JSON.stringify({ name: trip })
-                });
-
+                const response = await fetch(
+                    `${process.env.REACT_APP_API_URL}:5000/api/destinations/add`,
+                    {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            Authorization: `Bearer ${token}`
+                        },
+                        body: JSON.stringify({ name: trip })
+                    }
+                );
                 const data = await response.json();
-
                 if (response.ok) {
+                    // Update saved destinations and clear input
                     setSavedPlaces(data);
                     setTrip('');
                 } else {
+                    // Show API error message
                     setError(data.msg || 'Failed to add destination');
                 }
             } catch (err) {
@@ -94,15 +105,13 @@ const TravelPlanner = () => {
         }
     };
 
+    // Remove a destination by ID
     const handleRemoveDestination = async (destinationId) => {
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}:5000/api/destinations/remove/${destinationId}`, {
-                method: 'DELETE',
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                }
-            });
-
+            const response = await fetch(
+                `${process.env.REACT_APP_API_URL}:5000/api/destinations/remove/${destinationId}`,
+                { method: 'DELETE', headers: { Authorization: `Bearer ${token}` } }
+            );
             if (response.ok) {
                 const data = await response.json();
                 setSavedPlaces(data);
@@ -114,15 +123,13 @@ const TravelPlanner = () => {
         }
     };
 
+    // Remove an attraction by its subdocument ID
     const handleRemoveAttraction = async (attractionId) => {
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}:5000/api/destinations/attractions/remove/${attractionId}`, {
-                method: 'DELETE',
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                }
-            });
-
+            const response = await fetch(
+                `${process.env.REACT_APP_API_URL}:5000/api/destinations/attractions/remove/${attractionId}`,
+                { method: 'DELETE', headers: { Authorization: `Bearer ${token}` } }
+            );
             if (response.ok) {
                 const data = await response.json();
                 setSavedAttractions(data);
@@ -134,42 +141,47 @@ const TravelPlanner = () => {
         }
     };
 
+    // Clear auth token and redirect to login
     const handleLogout = () => {
-        localStorage.removeItem("token");
+        localStorage.removeItem('token');
         setToken(null);
         setSavedPlaces([]);
         setSavedAttractions([]);
-        window.location.href = "/auth";
+        window.location.href = '/auth';
     };
 
+    // Trigger add when pressing Enter in input
     const handleKeyPress = (e) => {
         if (e.key === 'Enter') {
             handleAddTrip();
         }
     };
 
+    // Navigate to a city-specific page on card click
     const handleCityClick = (cityId) => {
         navigate(`/city/${cityId}`);
     };
 
     return (
         <div className="travel-planner">
+            {/* Header with title and user menu */}
             <header className="header">
                 <h1>Travel Planner</h1>
                 <p>Plan and organize your travel destinations easily</p>
                 <div className="user-menu">
-                    <button
-                        onClick={() => setDropdownOpen(!dropdownOpen)}
-                        className="menu-button"
-                    >
+                    {/* Menu toggle button */}
+                    <button onClick={() => setDropdownOpen(!dropdownOpen)} className="menu-button">
                         ☰
                     </button>
+
+                    {/* Dropdown showing logout and saved items */}
                     {dropdownOpen && (
                         <div className="dropdown">
                             <button onClick={handleLogout} className="logout-button">
                                 Logout
                             </button>
                             <div className="saved-places">
+                                {/* Tabs for destinations vs attractions */}
                                 <div className="tabs">
                                     <button
                                         onClick={() => setActiveTab('destinations')}
@@ -185,6 +197,7 @@ const TravelPlanner = () => {
                                     </button>
                                 </div>
 
+                                {/* Conditionally render saved destinations or attractions */}
                                 {activeTab === 'destinations' ? (
                                     <>
                                         <strong>Saved Destinations:</strong>
@@ -239,6 +252,7 @@ const TravelPlanner = () => {
                 </div>
             </header>
 
+            {/* Main section for adding and viewing top destinations */}
             <main>
                 <section className="add-trips">
                     <h2>Add Destination to Your List</h2>
@@ -253,11 +267,7 @@ const TravelPlanner = () => {
                             className="add-trip-input"
                             required
                         />
-                        <button
-                            onClick={handleAddTrip}
-                            disabled={loading || !trip.trim()}
-                            className="add-trip-button"
-                        >
+                        <button onClick={handleAddTrip} disabled={loading || !trip.trim()} className="add-trip-button">
                             {loading ? 'Adding...' : 'Add Trip'}
                         </button>
                     </div>
@@ -265,6 +275,7 @@ const TravelPlanner = () => {
 
                 <section className="destinations">
                     <h2>Top Destinations</h2>
+                    {/* Grid of preset destination cards for quick add or navigation */}
                     <div className="destination-grid">
                         {[
                             { id: 'paris', img: '/images/paris.jpg', title: 'Paris, France' },
@@ -287,6 +298,7 @@ const TravelPlanner = () => {
                             >
                                 <img src={img} alt={title} />
                                 <h3>{title}</h3>
+                                {/* Quick-add places typed based on card selection */}
                                 <button
                                     onClick={(e) => {
                                         e.stopPropagation();
@@ -301,10 +313,9 @@ const TravelPlanner = () => {
                         ))}
                     </div>
                 </section>
-
-
             </main>
 
+            {/* Footer with copyright */}
             <footer>
                 <p>&copy; 2025 BCN: Team Rot</p>
             </footer>
