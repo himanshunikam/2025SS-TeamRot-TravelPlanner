@@ -1,4 +1,5 @@
 // cities.js
+// hier werden jeder Stadt gespeichert werden
 export const cities = [
     {
         id: 'paris',
@@ -77,4 +78,12 @@ export const cities = [
         description: 'Set along the River Thames, London is renowned for its iconic landmarks, vibrant arts scene, and rich blend of history and modernity.',
         image: '/images/london.jpg'
     },
+    {
+        id: 'singapore',
+        name: 'Singapore',
+        country: 'Singapore',
+        description: 'A dynamic island city-state, Singapore is famed for its futuristic skyline, lush green spaces, and a unique fusion of Asian cultures and global innovation.',
+        image: '/images/singapore.jpg'
+    }
+
 ];

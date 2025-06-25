@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import axios from 'axios';// Import CSS for styling
 import {Link} from 'react-router';
 import './LoginStyle.css'
+//konstanten fürs login werden definiert
 const Login = ({ setLoggedInUser }) => {
     const [formData, setFormData] = useState({
         username: '',
