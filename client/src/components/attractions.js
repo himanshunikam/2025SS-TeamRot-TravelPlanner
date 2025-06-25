@@ -55,7 +55,7 @@ export const attractions = [
         cityId: 'tokyo',
         name: 'Sensō-ji',
         description: 'Ancient Buddhist temple located in Asakusa, Tokyo\'s oldest temple.',
-        image: './images/sensoji.jpg',
+        image: '/images/sensoji.jpg',
         rating: 4.6
     },
     {
