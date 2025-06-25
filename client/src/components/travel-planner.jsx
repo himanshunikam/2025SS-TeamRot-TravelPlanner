@@ -266,8 +266,13 @@ const TravelPlanner = () => {
                             onKeyPress={handleKeyPress}
                             className="add-trip-input"
                             required
+                            style={{ height: '50px', boxSizing: 'border-box' , transform: 'translateY(8px)'}}
                         />
-                        <button onClick={handleAddTrip} disabled={loading || !trip.trim()} className="add-trip-button">
+                        <button onClick={handleAddTrip} disabled={loading || !trip.trim()} className="add-trip-button"
+                                style={{
+                                    transform: 'translateY(-30px)',
+                                    transition: 'background-color 0.3s, transform 0.3s'
+                                }}>
                             {loading ? 'Adding...' : 'Add Trip'}
                         </button>
                     </div>
