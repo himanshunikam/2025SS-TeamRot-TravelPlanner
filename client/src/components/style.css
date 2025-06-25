@@ -333,7 +333,9 @@ travel-planner .search-button:hover {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s;
+    position: relative;
+    top: -5px; /* moves it up */
+    transition: background-color 0.3s, top 0.3s;
 }
 
 .add-trip-button:hover:not(:disabled) {
