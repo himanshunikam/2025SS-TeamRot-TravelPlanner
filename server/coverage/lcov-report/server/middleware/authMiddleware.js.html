@@ -92,17 +92,31 @@
 <a name='L27'></a><a href='#L27'>27</a>
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
@@ -110,54 +124,67 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">// middleware/auth.js
-const jwt = require('jsonwebtoken');
-const config = require('../config');
-const User = require('../models/User');
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// middleware/auth.js
 &nbsp;
+const jwt = require('jsonwebtoken');             // JSON Web Token library for signing and verifying tokens
+const config = require('../config');              // Load config (contains jwtSecret)
+const User = require('../models/User');           // Mongoose User model
+&nbsp;
+// Authentication middleware to protect routes
 const auth = async (req, res, next) =&gt; {
     try {
+        // Extract token from Authorization header ("Bearer &lt;token&gt;")
         const token = req.header('Authorization')?.replace('Bearer ', '');
 &nbsp;
+        // If no token provided, deny access
         if (!token) {
             return res.status(401).json({ message: 'No token, authorization denied' });
         }
 &nbsp;
+        // Verify token and decode payload
         const decoded = jwt.verify(token, config.jwtSecret);
 &nbsp;
-        // The payload structure from auth.js uses user.id
+        // Find the user by ID stored in token payload, exclude password field
         const user = await User.findById(decoded.user.id).select('-password');
         if (!user) {
+            // If user does not exist, invalid token
             return res.status(401).json({ message: 'Token is not valid' });
         }
 &nbsp;
+        // Attach user ID to request object for downstream handlers
         req.user = { id: decoded.user.id };
-        next();
+        next();   // Proceed to next middleware or route handler
     } catch (error) {
         console.error('Auth middleware error:', error);
+        // On error (invalid token, expired, etc), deny access
         res.status(401).json({ message: 'Token is not valid' });
     }
 };
 &nbsp;
-module.exports = auth;</pre></td></tr></table></pre>
+module.exports = auth;   // Export middleware to use in routes
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-06-20T18:33:26.367Z
+                at 2025-06-26T19:51:58.887Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
